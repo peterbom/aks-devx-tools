@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: testworkflow20240418
+  labels:
+    app: testworkflow20240418
+  namespace: aksstore
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: testworkflow20240418
+  template:
+    metadata:
+      labels:
+        app: testworkflow20240418
+    spec:
+      containers:
+        - name: testworkflow20240418
+          image: pebomberacr.azurecr.io/image-workflow-1713395515604:latest
+          ports:
+            - containerPort: 3000

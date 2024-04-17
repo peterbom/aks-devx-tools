@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: testworkflow20240418
+  namespace: aksstore
+spec:
+  type: LoadBalancer
+  selector:
+    app: testworkflow20240418
+  ports:
+    - protocol: TCP
+      port: 3000
+      targetPort: 3000
